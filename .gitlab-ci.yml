@@ -1,0 +1,33 @@
+before_script:
+- python --version
+- pip install pylint pytest pyinstaller
+
+image: "python:3.10"
+
+stages:
+- linting
+- testing
+- deploy
+
+pylint:
+  stage: linting
+  only: 
+  - merge_requests
+  script: pylint src/*.py
+
+pytest:
+  stage: testing
+  only: 
+  - merge_requests
+  script: cd src/;pytest -v
+
+pyinstaller:
+  stage: deploy
+  only: 
+  - merge_requests
+  script: cd src/;pyinstaller -F test_main.py
+  tags:
+  - deployPy
+  artifacts:
+    paths: 
+      - src/dist/*.exe
