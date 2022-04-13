@@ -1,3 +1,5 @@
+# tags is used to choose the runner, setup your own runner with gitlab-runner with the tag `deployPy`
+
 before_script:
 - python --version
 - pip install pylint pytest pyinstaller
@@ -9,17 +11,29 @@ stages:
 - testing
 - deploy
 
+# possible pylint detected errors:
+# C0103: Argument name "x" doesn't conform to snake_case naming style
+# C0114: Missing module docstring
+# C0115: Missing class docstring
+# C0116: Missing function or method docstring
+# C0304: Final newline missing
+# to skip this, change pylint script to: `pylint -d C0103,C0114,C0115,C0116,C0304 src/`
+
 pylint:
   stage: linting
   only: 
   - merge_requests
-  script: pylint src/*.py
+  script: pylint src/
+  tags:
+  - deployPy
 
 pytest:
   stage: testing
   only: 
   - merge_requests
   script: cd src/;pytest -v
+  tags:
+  - deployPy
 
 pyinstaller:
   stage: deploy
