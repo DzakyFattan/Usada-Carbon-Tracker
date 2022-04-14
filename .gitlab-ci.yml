@@ -31,7 +31,7 @@ pytest:
   stage: testing
   only: 
   - merge_requests
-  script: cd src/;pytest -v
+  script: cd src/test/;pytest -v
   tags:
   - deployPy
 
@@ -39,7 +39,7 @@ pyinstaller:
   stage: deploy
   only: 
   - merge_requests
-  script: cd src/;pyinstaller -F test_main.py
+  script: cd src/;pyinstaller -F main.py
   tags:
   - deployPy
   artifacts:
