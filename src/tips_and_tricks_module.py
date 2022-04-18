@@ -17,7 +17,7 @@ def generate_timestamp():
     hour = random.randint(0, 23)
     minute = random.randint(0, 59)
     second = random.randint(0, 59)
-    time = f"%02d-%02d-%02d %02d:%02d:%02d"%(year, month, day, hour, minute, second)
+    time = f"{year}-{month}-{day} {hour}:{minute}:{second}"
     return time
 
 
