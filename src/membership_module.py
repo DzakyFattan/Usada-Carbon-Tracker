@@ -6,9 +6,9 @@ mydb = create_connection()
 
 mycursor = mydb.cursor()
 
-def generate_account_data(data_length):
+def generate_account_data(data):
     ''' generate n random data '''
-    for i in range(data_length):
+    for i in range(len(data)):
         cmd = "INSERT INTO account(username, email, password, account_status)"
         data = ("Orang" + str(i), "Orang" + str(i), "1234", "CUSTOMER")
         cmd += f" VALUES (\"{data[0]}\", \"{data[1]}\", \"{str(data[2])}\", \"{data[3]}\");"
