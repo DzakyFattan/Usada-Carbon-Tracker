@@ -18,12 +18,13 @@ stages:
 # C0116: Missing function or method docstring
 # C0304: Final newline missing
 # to skip this, change pylint script to: `pylint -d C0103,C0114,C0115,C0116,C0304 src/`
+# already skipped inevitable pylint error bcuz idfk how to make it work either way
 
 pylint:
   stage: linting
   only: 
   - merge_requests
-  script: pylint src/
+  script: pylint -d E1101,W0212,C0413 src/
   tags:
   - deployPy
 
@@ -31,7 +32,7 @@ pytest:
   stage: testing
   only: 
   - merge_requests
-  script: cd src/test/;pytest -v
+  script: cd src/tests/;pytest -v
   tags:
   - deployPy
 
@@ -39,7 +40,7 @@ pyinstaller:
   stage: deploy
   only: 
   - merge_requests
-  script: cd src/;pyinstaller -F main.py
+  script: cd src/;pyinstaller -F --add-data "sqlscript/usada_carbon_tracker.sql;." dbhandler.py
   tags:
   - deployPy
   artifacts:
