@@ -1,7 +1,7 @@
 '''import random'''
 import random
 import lorem
-from dbhandler import create_connection
+from process.dbhandler import create_connection
 
 mydb = create_connection()
 
@@ -26,7 +26,6 @@ def generate_data(data_length):
         waktu_pesan = generate_timestamp()
         data = ("Tips and Trick" + str(i), "Tips and Trick" + str(i), lorem.sentence(), waktu_pesan)
         cmd += f" VALUES (\"{data[0]}\", \"{data[1]}\", \"{str(data[2])}\", \"{data[3]}\");"
-        print(cmd)
         mycursor.execute(cmd)
         mydb.commit()
 
@@ -82,3 +81,9 @@ def get_all_tips_and_tricks():
     cmd = "SELECT * FROM tips_and_trick ORDER BY timestamp_key DESC"
     mycursor.execute(cmd)
     return mycursor.fetchall()
+
+def clear_tips_and_tricks():
+    ''' clear all data '''
+    cmd = "DELETE FROM tips_and_trick"
+    mycursor.execute(cmd)
+    mydb.commit()
