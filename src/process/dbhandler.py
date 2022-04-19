@@ -49,22 +49,6 @@ def resource_path(relative_path):
 
 def create_test_connection():
     """create a database connection to the SQLite test database"""
-    conn = None
-    sql = resource_path("usada_carbon_tracker.sql")
-    sql_script = None
-    try:
-        if os.path.exists("usada_carbon_tracker_test.db"):
-            os.remove("usada_carbon_tracker_test.db")
-        with open(sql, "r", encoding="utf-8") as sql_script:
-            sql_script = sql_script.read()
-        conn = sqlite3.connect("usada_carbon_tracker_test.db")
-        if sql_script:
-            conn.executescript(sql_script)
-    except Error as error:
-        print(error)
-        conn.close()
+    if os.path.exists("usada_carbon_tracker.db"):
         os.remove("usada_carbon_tracker.db")
-        print("Remove db...")
-        return None
 
-    return conn
