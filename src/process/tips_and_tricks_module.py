@@ -79,6 +79,6 @@ def del_tips_tricks_by_id(id_tips):
 
 def get_all_tips_and_tricks():
     ''' return all data '''
-    cmd = "SELECT * FROM tips_and_trick"
+    cmd = "SELECT * FROM tips_and_trick ORDER BY timestamp_key DESC"
     mycursor.execute(cmd)
     return mycursor.fetchall()
