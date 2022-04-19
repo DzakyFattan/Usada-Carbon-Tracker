@@ -2,14 +2,14 @@
 
 before_script:
 - python --version
-- pip install pylint pytest pyinstaller
+- pip install pylint pytest # pyinstaller
 
 image: "python:3.10"
 
 stages:
 - linting
 - testing
-- deploy
+# - deploy
 
 # possible pylint detected errors:
 # C0103: Argument name "x" doesn't conform to snake_case naming style
@@ -36,13 +36,13 @@ pytest:
   tags:
   - deployPy
 
-pyinstaller:
-  stage: deploy
-  only: 
-  - merge_requests
-  script: cd src/;pyinstaller -F --add-data "sqlscript/usada_carbon_tracker.sql;." dbhandler.py
-  tags:
-  - deployPy
-  artifacts:
-    paths: 
-      - src/dist/*.exe
+# pyinstaller:
+#   stage: deploy
+#   only: 
+#   - merge_requests
+#   script: cd src/;pyinstaller -F --add-data "sqlscript/usada_carbon_tracker.sql;." dbhandler.py
+#   tags:
+#   - deployPy
+#   artifacts:
+#     paths: 
+#       - src/dist/*.exe
