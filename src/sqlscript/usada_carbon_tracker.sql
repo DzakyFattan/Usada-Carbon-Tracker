@@ -24,7 +24,7 @@ PRIMARY KEY (`username`)
 DROP TABLE IF EXISTS `activity_history`;
 
 CREATE TABLE `activity_history` (
-`activityid` mediumINTEGER NOT NULL ,
+`activityid` INTEGER NOT NULL ,
 `username` TEXT NOT NULL,
 `nama_aktivitas` TEXT NOT NULL,
 `kategori` TEXT  NOT NULL,
@@ -39,7 +39,7 @@ FOREIGN KEY (`username`) REFERENCES `account` (`username`) ON DELETE CASCADE ON 
 DROP TABLE IF EXISTS `daftar_berita`;
 
 CREATE TABLE `daftar_berita` (
-`beritaid` mediumINTEGER NOT NULL ,
+`beritaid` INTEGER NOT NULL ,
 `judul` TEXT NOT NULL,
 `subtitle` TEXT NOT NULL,
 `konten` TEXT NOT NULL,
@@ -59,7 +59,7 @@ FOREIGN KEY (`username`) REFERENCES `account` (`username`) ON DELETE CASCADE ON 
 DROP TABLE IF EXISTS `pending_membership`;
 
 CREATE TABLE `pending_membership` (
-`requestid` mediumINTEGER NOT NULL ,
+`requestid` INTEGER NOT NULL ,
 `username` TEXT NOT NULL,
 `timestamp_key` datetime NOT NULL,
 PRIMARY KEY (`requestid`),
@@ -70,7 +70,7 @@ FOREIGN KEY (`username`) REFERENCES `account` (`username`) ON DELETE CASCADE ON 
 DROP TABLE IF EXISTS `tips_and_trick`;
 
 CREATE TABLE `tips_and_trick` (
-`tntid` mediumINTEGER NOT NULL ,
+`tntid` INTEGER NOT NULL ,
 `judul` TEXT NOT NULL,
 `subtitle` TEXT NOT NULL,
 `konten` TEXT NOT NULL,
