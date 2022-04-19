@@ -32,7 +32,7 @@ def input_data():
         hour = ct.hour
         minute = ct.minute
         second = ct.second
-        waktu = "%02d-%02d-%02d %02d:%02d:%02d"%(year, month, day, hour, minute, second)
+        waktu = f"{year}-{month}-{day} {hour}:{minute}:{second}"
     if kategori == 'Kendaraan':
         data = (current_username, nama_aktivitas, Category.Kendaraan, jumlah, None, waktu)
     elif kategori == 'Elektronik':
@@ -89,7 +89,7 @@ def get_recent_data(data_length):
     ''' get top n data based on the latest timestamp pass -99 to get all data '''
     cmd = f"SELECT * FROM activity_history WHERE username = \"{current_username}\" ORDER BY timestamp_key DESC"
     if data_length!=-99:
-        cmd += " LIMIT %s" + str(data_length)
+        cmd += " LIMIT " + str(data_length)
     fetched_data = mycursor.execute(cmd)
     data = []
     for i in fetched_data:
