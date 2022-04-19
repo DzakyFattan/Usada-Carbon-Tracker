@@ -16,7 +16,7 @@ CREATE TABLE `account` (
 `password` TEXT NOT NULL,
 `credit_card` TEXT DEFAULT NULL,
 `no_telp` TEXT DEFAULT NULL,
-`account_status` TEXT DEFAULT 'CUSTOMER',
+`account_status` TEXT DEFAULT `CUSTOMER`,
 PRIMARY KEY (`username`)
 );
 

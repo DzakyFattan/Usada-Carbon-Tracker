@@ -1,4 +1,4 @@
-"""test for main.py"""
+"""test for dbhandler.py"""
 
 import sys
 import os
@@ -9,14 +9,8 @@ parent = os.path.dirname(current)
 
 sys.path.append(parent)
 
-from dbhandler import create_connection
-from main import main
+from process.dbhandler import create_connection
 
 def test_connection():
     """test for connection"""
     assert create_connection() is not None
-
-def test_main(monkeypatch):
-    """test main"""
-    monkeypatch.setattr('builtins.input', lambda _: 13)
-    assert main() is not None

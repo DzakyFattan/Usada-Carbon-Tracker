@@ -1,7 +1,7 @@
 """main module"""
 
 from sqlite3 import Error
-from dbhandler import create_connection
+from process.dbhandler import create_connection
 
 def main():
     """main function"""

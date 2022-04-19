@@ -43,6 +43,6 @@ def resource_path(relative_path):
         if tmp_path.endswith("tests"):
             base_path = os.path.join("..", "sqlscript")
         else:
-            base_path = os.path.join(os.getcwd(), "src", "sqlscript")
+            base_path = os.path.join(os.getcwd(), "sqlscript")
 
     return os.path.join(base_path, relative_path)
