@@ -7,8 +7,6 @@ mydb = create_connection()
 
 mycursor = mydb.cursor()
 
-
-
 def generate_timestamp():
     ''' generate random timestamp '''
     year = random.randint(2021, 2022)
@@ -64,23 +62,23 @@ def get_older_data(data_length):
     cmd = "SELECT * FROM tips_and_trick ORDER BY timestamp_key ASC"
     if data_length!=-99:
         cmd += " LIMIT " + str(data_length)
-    fetched_data = mycursor.execute(cmd)
-    data = []
-    for i in fetched_data:
-        data.append(i)
-    return data
+    mycursor.execute(cmd)
+    return mycursor.fetchall()
 
-def get_data_from_id(id_tips):
+def get_tips_tricks_by_id(id_tips):
     ''' return a tuple of data based on the id '''
     cmd = f"SELECT * FROM tips_and_trick WHERE tntid = {id_tips}"
     mycursor.execute(cmd)
     return mycursor.fetchone()
 
+def del_tips_tricks_by_id(id_tips):
+    ''' delete data based on the id '''
+    cmd = f"DELETE FROM tips_and_trick WHERE tntid = {id_tips}"
+    mycursor.execute(cmd)
+    mydb.commit()
+
 def get_all_tips_and_tricks():
     ''' return all data '''
     cmd = "SELECT * FROM tips_and_trick"
     mycursor.execute(cmd)
-    data = []
-    for i in mycursor:
-        data.append(i)
-    return data
+    return mycursor.fetchall()
