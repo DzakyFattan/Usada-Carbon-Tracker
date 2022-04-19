@@ -1,7 +1,7 @@
 '''import random'''
 import random
 import lorem
-from dbhandler import create_connection
+from process.dbhandler import create_connection
 
 mydb = create_connection()
 

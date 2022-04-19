@@ -46,8 +46,3 @@ def resource_path(relative_path):
             base_path = os.path.join(os.getcwd(), "sqlscript")
 
     return os.path.join(base_path, relative_path)
-
-def create_test_connection():
-    """create a database connection to the SQLite test database"""
-    if os.path.exists("usada_carbon_tracker.db"):
-        os.remove("usada_carbon_tracker.db")

@@ -1,14 +1,15 @@
-'''testing tips_and_tricks'''
+"""test for tips_and_tricks_module.py"""
+
 import sys
 import os
 
-cwd = os.getcwd()
-cwd = os.path.join(cwd,"process")
-sys.path.insert(0, cwd)
-from process.dbhandler import create_test_connection
-import process.tips_and_tricks_module as tnt
+current = os.path.dirname(os.path.realpath(__file__))
 
-create_test_connection()
+parent = os.path.dirname(current)
+
+sys.path.append(parent)
+
+import process.tips_and_tricks_module as tnt
 
 def test_add_data():
     ''' test add data '''

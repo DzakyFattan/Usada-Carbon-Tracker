@@ -1,4 +1,4 @@
-"""test for main.py"""
+"""test for dbhandler.py"""
 
 import sys
 import os
