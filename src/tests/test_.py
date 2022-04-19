@@ -9,7 +9,7 @@ parent = os.path.dirname(current)
 
 sys.path.append(parent)
 
-from dbhandler import create_connection
+from process.dbhandler import create_connection
 from main import main
 
 def test_connection():
