@@ -1,6 +1,7 @@
 '''import random'''
 from datetime import datetime
-from dbhandler import create_connection
+from turtle import clear
+from process.dbhandler import create_connection
 
 mydb = create_connection()
 
@@ -8,12 +9,25 @@ mycursor = mydb.cursor()
 
 def generate_account_data(data):
     ''' generate n random data '''
-    for i in range(len(data)):
+    for i in range(data):
         cmd = "INSERT INTO account(username, email, password, account_status)"
         data = ("Orang" + str(i), "Orang" + str(i), "1234", "CUSTOMER")
         cmd += f" VALUES (\"{data[0]}\", \"{data[1]}\", \"{str(data[2])}\", \"{data[3]}\");"
         mycursor.execute(cmd)
         mydb.commit()
+
+def add_account(data):
+    ''' add account '''
+    cmd = "INSERT INTO account(username, email, password, account_status)"
+    cmd += f" VALUES (\"{data[0]}\", \"{data[1]}\", \"{str(data[2])}\", \"{data[3]}\");"
+    mycursor.execute(cmd)
+    mydb.commit()
+
+def del_account(username):
+    ''' delete account '''
+    cmd = f"DELETE FROM account WHERE username = \"{username}\""
+    mycursor.execute(cmd)
+    mydb.commit()
 
 def get_acc_by_uname(username):
     ''' return account data based on username '''
@@ -36,7 +50,6 @@ def request_membership(username, no_telp, credit_card):
     date_time = now.strftime("%Y-%m-%d %H:%M:%S")
     cmd = "INSERT INTO pending_membership(username,timestamp_key) "
     cmd += f"VALUES (\"{username}\", \"{date_time}\")"
-    print(cmd,"KONTOL")
     mycursor.execute(cmd)
     mydb.commit()
 
@@ -79,13 +92,13 @@ def accept_membership(username):
 
 def get_pending_membership_by_id(req_id):
     ''' return data based on id '''
-    cmd = f"SELECT * FROM pending_membership WHERE id = {req_id}"
+    cmd = f"SELECT * FROM pending_membership WHERE requestid = {req_id}"
     mycursor.execute(cmd)
     return mycursor.fetchone()
 
 def get_all_pending_membership():
     ''' return all data '''
-    cmd = "SELECT * FROM pending_membership"
+    cmd = "SELECT * FROM pending_membership ORDER BY timestamp_key DESC"
     mycursor.execute(cmd)
     data = []
     for i in mycursor:
@@ -107,3 +120,13 @@ def get_all_account():
     for i in mycursor:
         data.append(i)
     return data
+
+def clear_pending_membership():
+    ''' clear pending membership '''
+    cmd = "SELECT * FROM pending_membership"
+    mycursor.execute(cmd)
+    data = []
+    for i in mycursor:
+        data.append(i[1])
+    for j in data:
+        reject_membership(j)
