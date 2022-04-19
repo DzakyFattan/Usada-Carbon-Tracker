@@ -70,11 +70,17 @@ def get_older_data(data_length):
         data.append(i)
     return data
 
-def get_data_from_id(id_tips):
+def get_tips_tricks_by_id(id_tips):
     ''' return a tuple of data based on the id '''
     cmd = f"SELECT * FROM tips_and_trick WHERE tntid = {id_tips}"
     mycursor.execute(cmd)
     return mycursor.fetchone()
+
+def del_tips_tricks_by_id(id_tips):
+    ''' delete data based on the id '''
+    cmd = f"DELETE FROM tips_and_trick WHERE tntid = {id_tips}"
+    mycursor.execute(cmd)
+    mydb.commit()
 
 def get_all_tips_and_tricks():
     ''' return all data '''
