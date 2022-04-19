@@ -51,4 +51,3 @@ def create_test_connection():
     """create a database connection to the SQLite test database"""
     if os.path.exists("usada_carbon_tracker.db"):
         os.remove("usada_carbon_tracker.db")
-
