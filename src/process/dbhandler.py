@@ -56,7 +56,7 @@ def create_test_connection():
         if os.path.exists("usada_carbon_tracker_test.db"):
             os.remove("usada_carbon_tracker_test.db")
         with open(sql, "r", encoding="utf-8") as sql_script:
-                sql_script = sql_script.read()
+            sql_script = sql_script.read()
         conn = sqlite3.connect("usada_carbon_tracker_test.db")
         if sql_script:
             conn.executescript(sql_script)
