@@ -141,3 +141,8 @@ def get_previous_week_emission(n):
 
 def get_previous_month_emission(n):
     return get_previous_day_emission(n*30)
+
+def get_previous_day_emission(n):
+    cmd = f"SELECT SUM(jumlah_bensin), SUM(total_watt) FROM activity_history WHERE username = \"{current_username}\" AND DATEDIFF(NOW(), timestamp_key) <= {n}"
+    mycursor.execute(cmd)
+    return mycursor.fetchone()
