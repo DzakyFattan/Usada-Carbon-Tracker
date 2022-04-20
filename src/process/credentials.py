@@ -1,6 +1,6 @@
 """credentials handler"""
 
-from dbhandler import create_connection
+from process.dbhandler import create_connection
 
 mydb = create_connection()
 
@@ -28,11 +28,13 @@ def register_account(username, email, password):
     """Register account"""
     if username is None or email is None or password is None:
         return 3 # invalid input
+    if username == "" or email == "" or password == "":
+        return 3 # invalid input too
     if is_username_registered(username):
         return 1 # username already registered
     if is_email_registered(email):
         return 2 # email already registered
-    sql = "INSERT INTO account (username, email, password, credit_card, no_telp"
+    sql = "INSERT INTO account (username, email, password, credit_card, no_telp)"
     sql += f"VALUES ('{username}', '{email}', '{password}', '{None}', '{None}')"
     mycursor.execute(sql)
     mydb.commit()
