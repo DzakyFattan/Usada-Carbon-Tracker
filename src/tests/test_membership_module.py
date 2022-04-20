@@ -11,6 +11,9 @@ sys.path.append(parent)
 
 import process.membership_module as mm
 
+if(os.path.exists("usada_carbon_tracker.db")):
+    os.remove("usada_carbon_tracker.db")
+    
 user = ("Usada", "usaken@gmail.com", "12345678", "CUSTOMER")
 try:
     mm.add_account(user)
