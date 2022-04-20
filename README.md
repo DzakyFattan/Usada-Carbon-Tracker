@@ -13,18 +13,24 @@ Tugas Besar IF2250 Rekayasa Perangkat Lunak 2021 - Usada Carbon Tracker
 
 ## 1. Penjelasan Singkat Aplikasi
 Usada Carbon Tracker merupakan sebuah aplikasi pencatat jejak karbon yang dihasilkan dari alat elektronik serta emisi bahan bakar. 
-## 2. Cara Menjalankan Aplikasi
+## 2. Requirements
+Program dijalankan dengan ```Python 3.97```
+Modul yang mungkin perlu diinstall menggunakan pip install:
+- Lorem
+- PyQt5
+- Datetime
+## 3. Cara Menjalankan Aplikasi
 1. Current working directory harus berada pada folder src
 2. Lalu jalankan command ```python main.py```
 3. Aplikasi akan muncul pada windows
 4. Untuk mengakses fitur harus dilakukan login
 5. Jika tidak memiliki akun maka lakukan register terlebih dahulu dengan menekan hyperlink ```sign up now```
-## 3. Daftar Modul yang Diimplementasi
+## 4. Daftar Modul yang Diimplementasi
 1. Login/Register
 2. Catatan jejak aktivitas
 3. Tips and Tricks
 4. Membership
-## 4. Daftar Tabel Basis Data
+## 5. Daftar Tabel Basis Data
 
 <table>
 <tr><th>account</th><th>activity_history</th></tr>
