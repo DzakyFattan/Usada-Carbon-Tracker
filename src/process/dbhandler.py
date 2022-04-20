@@ -19,7 +19,9 @@ def create_connection():
         conn = sqlite3.connect("usada_carbon_tracker.db")
         if sql_script:
             conn.executescript(sql_script)
-            conn.cursor().execute("INSERT INTO account(username, email, password, account_status) VALUES ('admin', 'admin@usadaconstruction.net', 'admin', 'ADMIN')")
+            cmd = "INSERT INTO account(username, email, password, account_status)"
+            cmd += " VALUES ('admin', 'admin@usadaconstruction.net', 'admin', 'ADMIN')"
+            conn.cursor().execute(cmd)
     except Error as error:
         print(error)
         conn.close()
