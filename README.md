@@ -30,6 +30,7 @@ Usada Carbon Tracker merupakan sebuah aplikasi pencatat jejak karbon yang dihasi
 <tr><th>account</th><th>activity_history</th></tr>
 <tr>
 <td>
+|   **account**  |
 |:--------------:|
 |    username    |
 |      email     |
@@ -39,6 +40,7 @@ Usada Carbon Tracker merupakan sebuah aplikasi pencatat jejak karbon yang dihasi
 | account_status |
 </td>
 <td>
+| **activity_history** |
 |:--------------------:|
 |      activityid      |
 |       username       |
@@ -55,6 +57,7 @@ Usada Carbon Tracker merupakan sebuah aplikasi pencatat jejak karbon yang dihasi
 <tr><th>daftar_berita</th><th>tips_and_trick</th></tr>
 <tr>
 <td>
+| **daftar_berita** |
 |:-----------------:|
 |      beritaid     |
 |       judul       |
@@ -63,6 +66,7 @@ Usada Carbon Tracker merupakan sebuah aplikasi pencatat jejak karbon yang dihasi
 |   timestamp_key   |
 </td>
 <td>
+|      **tntid**     |
 |:------------------:|
 |        tntid       |
 |        judul       |
@@ -77,12 +81,14 @@ Usada Carbon Tracker merupakan sebuah aplikasi pencatat jejak karbon yang dihasi
 <tr><th>pending_membership</th><th>logged_user</th></tr>
 <tr>
 <td>
+| **pending_membership** |
 |:----------------------:|
 |        requestid       |
 |        username        |
 |      timestamp_key     |
 </td>
 <td>
+| **logged_user** |
 |:---------------:|
 |     username    |
 </td>
