@@ -10,14 +10,9 @@ parent = os.path.dirname(current)
 sys.path.append(parent)
 
 import process.membership_module as mm
+import process.credentials as cred
 
-user = ("Usada", "usaken@gmail.com", "12345678", "CUSTOMER")
-try:
-    mm.add_account(user)
-except:
-    mm.del_account(user[0])
-    mm.add_account(user)
-    mm.clear_pending_membership()
+cred.register_account("Usada", "usaken@gmail.com", "12345678")
 
 def test_req_membership():
     """test for request membership"""

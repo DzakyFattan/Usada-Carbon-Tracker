@@ -9,7 +9,6 @@ def create_connection():
     """create a database connection to the SQLite database"""
     conn = None
     sql = resource_path("usada_carbon_tracker.sql")
-    print(sql)
     sql_script = None
     try:
         if not os.path.exists("usada_carbon_tracker.db"):
@@ -20,6 +19,9 @@ def create_connection():
         conn = sqlite3.connect("usada_carbon_tracker.db")
         if sql_script:
             conn.executescript(sql_script)
+            cmd = "INSERT INTO account(username, email, password, account_status)"
+            cmd += " VALUES ('admin', 'admin@usadaconstruction.net', 'admin', 'ADMIN')"
+            conn.cursor().execute(cmd)
     except Error as error:
         print(error)
         conn.close()

@@ -24,7 +24,7 @@ pylint:
   stage: linting
   only: 
   - merge_requests
-  script: pylint -d E0401,E1101,C0413,R,W src/
+  script: cd src/;pylint -d E0401,E1101,C,R,W process/
   tags:
   - deployPy
 

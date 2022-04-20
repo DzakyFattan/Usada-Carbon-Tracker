@@ -15,6 +15,15 @@ def is_username_registered(username):
         return True
     return False
 
+def get_account_status(username):
+    """Get account status"""
+    sql = f"SELECT account_status FROM account WHERE username = \"{username}\""
+    mycursor.execute(sql)
+    result = mycursor.fetchone()
+    if result:
+        return result[0]
+    return None
+
 def is_email_registered(email):
     """Check if email is registered"""
     sql = f"SELECT * FROM account WHERE email = '{email}'"
