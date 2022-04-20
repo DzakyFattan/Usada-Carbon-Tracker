@@ -13,7 +13,7 @@ import process.credentials as cred
 
 def test_username_registered():
     """test username registered"""
-    assert cred.is_username_registered("Peko")
+    assert cred.is_username_registered("Peko") is False
 
 def test_register_new():
     """test register new user"""
