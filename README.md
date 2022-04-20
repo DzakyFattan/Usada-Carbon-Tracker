@@ -30,25 +30,21 @@ Usada Carbon Tracker merupakan sebuah aplikasi pencatat jejak karbon yang dihasi
 <tr><th>account</th><th>activity_history</th></tr>
 <tr>
 <td>
-|   **account**  |
-|----------------|
-|    username    |
-|      email     |
-|    password    |
-|   credit_card  |
-|     no_telp    |
-| account_status |
+<ins>username</ins><br>
+email<br>
+password<br> 
+credit_card<br>
+no_telp<br>
+account_status
 </td>
 <td>
-| **activity_history** |
-|----------------------|
-|      activityid      |
-|       username       |
-|    nama_aktivitas    |
-|       kategori       |
-|     jumlah_bensin    |
-|      total_watt      |
-|     timestamp_key    |
+<ins>activityid</ins><br>
+username<br>
+nama_aktivitas
+kategori<br>
+jumlah_bensin<br>
+total_watt<br>
+timestamp_key
 </td>
 </tr>
 </table>
@@ -57,22 +53,18 @@ Usada Carbon Tracker merupakan sebuah aplikasi pencatat jejak karbon yang dihasi
 <tr><th>daftar_berita</th><th>tips_and_trick</th></tr>
 <tr>
 <td>
-| **daftar_berita** |
-|-------------------|
-|      beritaid     |
-|       judul       |
-|      subtitle     |
-|       konten      |
-|   timestamp_key   |
+<ins>beritaid</ins><br>
+judul<br>
+subtitle<br>
+konten<br>
+timestamp_key
 </td>
 <td>
-|      **tntid**     |
-|--------------------|
-|        tntid       |
-|        judul       |
-|      subtitle      |
-|       konten       |
-|    timestamp_key   |
+<ins>tntid</ins><br>
+judul<br>
+subtitle<br>
+konten<br>
+timestamp_key
 </td>
 </tr>
 </table>
@@ -81,16 +73,12 @@ Usada Carbon Tracker merupakan sebuah aplikasi pencatat jejak karbon yang dihasi
 <tr><th>pending_membership</th><th>logged_user</th></tr>
 <tr>
 <td>
-| **pending_membership** |
-|------------------------|
-|        requestid       |
-|        username        |
-|      timestamp_key     |
+<ins>requestid</ins><br>
+username<br>
+timestamp_key
 </td>
 <td>
-| **logged_user** |
-|-----------------|
-|     username    |
+<ins>username</ins>
 </td>
 </tr>
 </table>
