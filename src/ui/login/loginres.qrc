@@ -1,0 +1,6 @@
+<RCC>
+  <qresource prefix="usadafront">
+    <file>../img/logo.png</file>
+    <file>../img/pekofront.png</file>
+  </qresource>
+</RCC>
