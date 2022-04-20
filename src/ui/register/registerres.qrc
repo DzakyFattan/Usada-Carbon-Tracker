@@ -1,0 +1,6 @@
+<RCC>
+  <qresource prefix="backicon">
+    <file>../img/backicon.png</file>
+    <file>../img/logo.png</file>
+  </qresource>
+</RCC>

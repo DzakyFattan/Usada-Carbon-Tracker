@@ -14,4 +14,4 @@ from main import main
 def test_main(monkeypatch):
     """test main"""
     monkeypatch.setattr('builtins.input', lambda _: 13)
-    assert main() is not None
+    main()
