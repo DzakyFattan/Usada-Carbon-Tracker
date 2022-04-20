@@ -1,6 +1,5 @@
 '''import random'''
 from datetime import datetime
-from turtle import clear
 from process.dbhandler import create_connection
 
 mydb = create_connection()

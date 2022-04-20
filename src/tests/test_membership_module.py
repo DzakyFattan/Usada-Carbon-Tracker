@@ -20,6 +20,7 @@ except:
     mm.clear_pending_membership()
 
 def test_req_membership():
+    """test for request membership"""
     mm.request_membership("Usada", "42315", "33334444")
     data = mm.get_acc_by_uname("Usada")
     assert data[0] == "Usada"
@@ -28,6 +29,7 @@ def test_req_membership():
     assert data[5] == "PENDING"
 
 def test_acc_membership():
+    """test for accept membership"""
     mm.accept_membership("Usada")
     data = mm.get_acc_by_uname("Usada")
     assert data[0] == "Usada"
@@ -36,10 +38,11 @@ def test_acc_membership():
     assert data[5] == "MEMBER"
 
 def test_reject_membership():
+    """test for reject membership"""
     mm.request_membership("Usada","1234","4444")
     mm.reject_membership("Usada")
     data = mm.get_acc_by_uname("Usada")
     assert data[0] == "Usada"
-    assert data[3] == None
-    assert data[4] == None
+    assert data[3] is None
+    assert data[4] is None
     assert data[5] == "CUSTOMER"
