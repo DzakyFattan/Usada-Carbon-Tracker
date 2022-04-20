@@ -11,6 +11,9 @@ sys.path.append(parent)
 
 from main import main
 
+if(os.path.exists("usada_carbon_tracker.db")):
+    os.remove("usada_carbon_tracker.db")
+    
 def test_main(monkeypatch):
     """test main"""
     monkeypatch.setattr('builtins.input', lambda _: 13)

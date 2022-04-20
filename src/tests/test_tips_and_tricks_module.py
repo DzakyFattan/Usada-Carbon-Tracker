@@ -9,6 +9,8 @@ parent = os.path.dirname(current)
 
 sys.path.append(parent)
 
+if(os.path.exists("usada_carbon_tracker.db")):
+    os.remove("usada_carbon_tracker.db")
 import process.tips_and_tricks_module as tnt
 
 def test_add_data():
