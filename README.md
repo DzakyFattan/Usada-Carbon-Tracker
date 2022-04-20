@@ -27,9 +27,10 @@ Usada Carbon Tracker merupakan sebuah aplikasi pencatat jejak karbon yang dihasi
 ## 4. Daftar Tabel Basis Data
 
 <table>
-<tr><th>**account**</th><th>**activity_history**</th></tr>
+<tr><th>account</th><th>activity_history</th></tr>
 <tr>
 <td>
+|:--------------:|
 |    username    |
 |      email     |
 |    password    |
@@ -38,6 +39,7 @@ Usada Carbon Tracker merupakan sebuah aplikasi pencatat jejak karbon yang dihasi
 | account_status |
 </td>
 <td>
+|:--------------------:|
 |      activityid      |
 |       username       |
 |    nama_aktivitas    |
@@ -50,9 +52,10 @@ Usada Carbon Tracker merupakan sebuah aplikasi pencatat jejak karbon yang dihasi
 </table>
 
 <table>
-<tr><th>**daftar_berita**</th><th>**tips_and_trick**</th></tr>
+<tr><th>daftar_berita</th><th>tips_and_trick</th></tr>
 <tr>
 <td>
+|:-----------------:|
 |      beritaid     |
 |       judul       |
 |      subtitle     |
@@ -60,6 +63,7 @@ Usada Carbon Tracker merupakan sebuah aplikasi pencatat jejak karbon yang dihasi
 |   timestamp_key   |
 </td>
 <td>
+|:------------------:|
 |        tntid       |
 |        judul       |
 |      subtitle      |
@@ -70,14 +74,16 @@ Usada Carbon Tracker merupakan sebuah aplikasi pencatat jejak karbon yang dihasi
 </table>
 
 <table>
-<tr><th>**pending_membership**</th><th>**logged_user**</th></tr>
+<tr><th>pending_membership</th><th>logged_user</th></tr>
 <tr>
 <td>
+|:----------------------:|
 |        requestid       |
 |        username        |
 |      timestamp_key     |
 </td>
 <td>
+|:---------------:|
 |     username    |
 </td>
 </tr>
