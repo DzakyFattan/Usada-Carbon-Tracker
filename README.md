@@ -25,47 +25,26 @@ Usada Carbon Tracker merupakan sebuah aplikasi pencatat jejak karbon yang dihasi
 3. Tips and Tricks
 4. Membership
 ## 4. Daftar Tabel Basis Data
-|   **account**  |
-|:--------------:|
-|    username    |
-|      email     |
-|    password    |
-|   credit_card  |
-|     no_telp    |
-| account_status |
-
-| **activity_history** |
-|:--------------------:|
-|      activityid      |
-|       username       |
-|    nama_aktivitas    |
-|       kategori       |
-|     jumlah_bensin    |
-|      total_watt      |
+| **activity_history** | |   **account**  |
+|:--------------------:| |:--------------:|
+|      activityid      | |    username    |
+|       username       | |      email     |
+|    nama_aktivitas    | |    password    |
+|       kategori       | |   credit_card  |
+|     jumlah_bensin    | |     no_telp    |
+|      total_watt      | | account_status |
 |     timestamp_key    |
 
-| **daftar_berita** |
-|:-----------------:|
-|      beritaid     |
-|       judul       |
-|      subtitle     |
-|       konten      |
-|   timestamp_key   |
+| **tips_and_trick** | | **daftar_berita** |
+|:------------------:| |:-----------------:|
+|        tntid       | |      beritaid     |
+|        judul       | |       judul       |
+|      subtitle      | |      subtitle     |
+|       konten       | |       konten      |
+|    timestamp_key   | |   timestamp_key   |
 
-| **logged_user** |
-|:---------------:|
-|     username    |
-
-| **pending_membership** |
-|:----------------------:|
-|        requestid       |
+| **pending_membership** | | **logged_user** |
+|:----------------------:| |:---------------:|
+|        requestid       | |     username    |
 |        username        |
 |      timestamp_key     |
-
-| **tips_and_trick** |
-|:------------------:|
-|        tntid       |
-|        judul       |
-|      subtitle      |
-|       konten       |
-|    timestamp_key   |
